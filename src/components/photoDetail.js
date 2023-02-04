@@ -31,7 +31,7 @@ function PhotoDetail() {
         .catch(console.error);
     }
   };
-  return (
+  return imagedata !== undefined ? (
     <div
       style={{
         display: "flex",
@@ -41,7 +41,7 @@ function PhotoDetail() {
         height: "100vh",
       }}
     >
-      <img src={imagedata?.urls.raw} style={{ height: 400, width: 400 }} />
+      <img src={imagedata?.urls.small_s3} style={{ height: 400, width: 400 }} />
       <div>
         <Button
           name="share"
@@ -56,6 +56,8 @@ function PhotoDetail() {
       <h1>Download: {imagedata?.downloads} </h1>
       <h1>likes: {imagedata?.likes}</h1>
     </div>
+  ) : (
+    <h1>Loading</h1>
   );
 }
 

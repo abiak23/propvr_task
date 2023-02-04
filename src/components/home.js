@@ -74,13 +74,13 @@ function Home() {
           data.map((e) => (
             <Link to={`/photo/${e.id}`}>
               <img
-                src={e.urls.raw}
+                src={e.urls.small}
                 style={{ height: 400, width: 400, margin: "10px" }}
               />
             </Link>
           ))
         ) : (
-          <></>
+          <h2>Loading</h2>
         )}
       </div>
     </div>
